@@ -3,7 +3,7 @@ import React from 'react';
 const Checkbox: React.FC = () => {
   return (
     <div>
-      Testing
+      Testing 2
     </div>
   );
 };
