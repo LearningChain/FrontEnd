@@ -8,10 +8,10 @@ export interface BadgeProps {
   size?: string;
 }
 
-const Badge = ({children, pattern, theme, size}: BadgeProps) => {
+const Badge = ({children, ...props}: BadgeProps) => {
   return (
-    <Layout pattern={pattern} theme={theme} size={size}>
-      <Text pattern={pattern} theme={theme} size={size}>
+    <Layout {...props}>
+      <Text {...props}>
         {children}
       </Text>
     </Layout>

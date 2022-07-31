@@ -9,33 +9,22 @@ interface BadgeColorAtr {
         radiusRectangle: string;
     }
 }
-
-interface BadgeSizeAtr {
-    [middle: string]: string;
-    long: string;
-}
-
 const textColor: BadgeColorAtr = {
-    light: {
-        radiusRectangle: "#4A5056"
-    },
-    dark: {
-        radiusRectangle: "#FFFFFF"
-    }
+  light: {
+    radiusRectangle: '#4A5056',
+  },
+  dark: {
+    radiusRectangle: '#FFFFFF',
+  },
 };
 
 const backgroundColor: BadgeColorAtr = {
-    light: {
-        radiusRectangle: '#eaeaea'
-    },
-    dark: {
-        radiusRectangle: '#A4A4A4'
-    }
-};
-
-const badgeSize: BadgeSizeAtr = {
-    middle: '30px',
-    long: '45px'
+  light: {
+    radiusRectangle: '#eaeaea',
+  },
+  dark: {
+    radiusRectangle: '#A4A4A4',
+  },
 };
 
 export const Layout = styled.li<BadgeProps>`
@@ -47,7 +36,6 @@ export const Layout = styled.li<BadgeProps>`
   ${(props) =>
     props.pattern === 'radiusRectangle' &&
     css`
-      width: badgeSize[props.size];
       height: 15px;
       border-radius: 5px;
     `}
