@@ -5,7 +5,6 @@ export interface BadgeProps {
   children: React.ReactNode;
   pattern: string;
   theme?: string;
-  size?: string;
 }
 
 const Badge = ({children, ...props}: BadgeProps) => {
