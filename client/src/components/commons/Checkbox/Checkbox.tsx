@@ -1,7 +1,9 @@
 import React from 'react';
-import type {CheckboxProps} from './Checkbox.types';
-
 import {Layout, Icon, Label} from './Checkbox.styles';
+
+export interface CheckboxProps {
+  label?: string;
+}
 
 const Checkbox = ({label, ...props} : CheckboxProps) => {
   return (
