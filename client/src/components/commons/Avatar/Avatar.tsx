@@ -12,6 +12,10 @@ export interface AvatarProps {
   useImg?: string;
   /* icon 사용시 svg */
   icon?: React.ReactNode;
+  /* size 사용시 width */
+  width?: string;
+  /* size 사용시 height */
+  height?: string;
 }
 
 const Avatar = ({children, ...props}: AvatarProps) => {

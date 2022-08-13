@@ -19,11 +19,11 @@ export const Layout = styled.div<AvatarProps>`
   ${(props) =>
     props.pattern === 'noneIconAvater' &&
     css`
-      width: 96px;
-      height: 96px;
+      width: ${props.width ? props.width : '96px'};
+      height: ${props.height ? props.height : '96px'};
       img {
-        width: 96px;
-        height: 96px;
+        width: ${props.width ? props.width : '96px'};
+        height: ${props.height ? props.height : '96px'};
         border-radius: 50%;
         border: 1px solid #eaeaea;
       }
