@@ -9,11 +9,16 @@ export const Layout = styled.button<ButtonProps>`
   ${(props) =>
     props.pattern === 'filter' &&
     css`
-      width: 54px;
       height: 30px;
+      padding: 0px 10px 0px 10px;
       border-radius: 15px;
-      background: ${props.bright === 'light' ? '#eaeaea' : '#A4A4A4'};
+      background: ${props.background
+        ? props.background
+        : props.bright === 'light'
+        ? '#eaeaea'
+        : '#A4A4A4'};
     `}
+
   ${(props) =>
     props.pattern === 'category' &&
     css`
@@ -22,6 +27,7 @@ export const Layout = styled.button<ButtonProps>`
       border-radius: 20px;
       background: #d9d9d9;
     `}
+
     ${(props) =>
     props.pattern === 'squareModal' &&
     css`
@@ -39,6 +45,7 @@ export const Layout = styled.button<ButtonProps>`
       color: #ffffff;
       background: ${props.bright === 'light' ? '#D9D9D9' : '#616161'};
     `}
+
     ${(props) =>
     props.pattern === 'RectangleBlack' &&
     css`
@@ -46,6 +53,7 @@ export const Layout = styled.button<ButtonProps>`
       height: 50px;
       background: #d9d9d9;
     `}
+
     ${(props) =>
     props.pattern === 'roundModal' &&
     css`
@@ -56,6 +64,7 @@ export const Layout = styled.button<ButtonProps>`
       color: ${props.bright === 'light' ? '#000000' : '#FFFFFF'};
       background: ${props.bright === 'light' ? '#FFFFFF' : '#949494'};
     `}
+
     ${(props) =>
     props.pattern === 'circleIcon' &&
     css`
@@ -64,23 +73,53 @@ export const Layout = styled.button<ButtonProps>`
       border-radius: 50%;
       background: #f1f1f1;
     `}
+
     ${(props) =>
     props.pattern === 'iconWith' &&
     css`
-      width: 80px;
       height: 23px;
       display: flex;
       justify-content: center;
       background: #ffffff;
       svg {
         margin-left: 5px;
+        margin-right: 5px;
       }
     `}
+
+     ${(props) =>
+    props.pattern === 'iconWithBackground' &&
+    css`
+      height: 30px;
+      padding: 0px 10px 0px 10px;
+      border-radius: 70px;
+      background: ${props.background ? props.background : 'black'};
+      color: ${props.color ? props.color : 'white'};
+      svg {
+        margin-left: 5px;
+      }
+    `}
+
      ${(props) =>
     props.pattern === 'iconAlone' &&
     css`
       background: #ffffff;
       width: 25px;
       height: 25px;
+    `}
+
+     ${(props) =>
+    props.pattern === 'iconAlone' &&
+    css`
+      background: #ffffff;
+      width: 25px;
+      height: 25px;
+    `}
+
+    ${(props) =>
+    props.pattern === 'textAlone' &&
+    css`
+      color: #b3b3b3;
+      background: ${props.background ? props.background : '#FFFFFF'};
     `}
 `;

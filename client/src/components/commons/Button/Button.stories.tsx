@@ -1,7 +1,7 @@
 import Button from './Button';
 import React from 'react';
 export default {
-  title: 'Common/Button',
+  title: 'Commons/Button',
   component: Button,
 };
 
@@ -97,6 +97,28 @@ export const all = () => (
       </svg>
     </Button>
     <br />
+    <br />
+    <div>iconWithBackground</div>
+    <br />
+    <Button pattern={'iconWithBackground'}>
+      <div>더보기</div>
+      <svg
+        width="21"
+        height="21"
+        viewBox="0 0 21 21"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.59082 5.72754L13.3635 10.5003L8.59082 15.273"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </Button>
+    <br />
     <div>iconAlone</div>
     <br />
     <Button pattern={'iconAlone'}>
@@ -124,5 +146,8 @@ export const all = () => (
       </svg>
     </Button>
     <br />
+    <div>textAlone</div>
+    <br />
+    <Button pattern={'textAlone'}>text</Button>
   </>
 );

@@ -12,14 +12,14 @@ export interface ButtonProps {
   bright?: string;
   /* 버튼 크기 결정 */
   size?: string;
+  /* 배경색 결정 */
+  background?: string;
+  /* 글자색상 결정 */
+  color?: string;
 }
 
-const Button = ({children, onClick, pattern, bright}: ButtonProps) => {
-  return (
-    <Layout pattern={pattern} bright={bright} onClick={onClick}>
-      {children}
-    </Layout>
-  );
+const Button = ({children, ...props}: ButtonProps) => {
+  return <Layout {...props}>{children}</Layout>;
 };
 
 export default Button;
