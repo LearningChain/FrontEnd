@@ -1,7 +1,7 @@
 import Badge from './Badge';
 
 export default {
-  title: 'Common/Badge',
+  title: 'Commons/Badge',
   component: Badge,
 };
 
