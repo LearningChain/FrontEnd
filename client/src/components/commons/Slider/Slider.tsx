@@ -46,12 +46,12 @@ const Slider = ({
   const progress = (value - minValue) / (maxValue - minValue);
 
   const handleChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const val = Number(event.target.value);
-      setValue(val);
-      onChange?.(val);
-    },
-    [onChange],
+      (event: ChangeEvent<HTMLInputElement>) => {
+        const val = Number(event.target.value);
+        setValue(val);
+        onChange?.(val);
+      },
+      [onChange],
   );
 
   useEffect(() => {

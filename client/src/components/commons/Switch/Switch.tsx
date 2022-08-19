@@ -6,7 +6,7 @@ export interface SwitchProps {
   children: React.ReactNode;
 }
 
-const Switch = ({children,...props}: SwitchProps) => {
+const Switch = ({children, ...props}: SwitchProps) => {
   return (
     <Layout {...props}>
       {children}
