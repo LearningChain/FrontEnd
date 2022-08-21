@@ -109,10 +109,10 @@ const Modal = ({
 };
 
 Modal.defaultProps = {
-  title: 'Job.ssafy로 연결됩니다',
-  description: '연결시 Web DRM이 켜집니다.',
-  secondary: '사양할게요',
-  primary: '네! 들어갈게요',
+  title: '아티클을 등록했습니다',
+  description: '',
+  secondary: '내가 쓴 글 보러가기',
+  primary: '메인으로 가기',
   theme: THEME.LIGHT,
 };
 
