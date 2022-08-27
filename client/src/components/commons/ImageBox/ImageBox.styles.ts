@@ -15,8 +15,8 @@ export const Layout = styled.img<ImageBoxProps>`
   ${(props) =>
     props.pattern === 'cardImage' &&
     css`
-      width: 152px;
-      height: 110px;
+      width: 125px;
+      height: 125px;
       border-radius: 10px;
       background: #f0f0f0;
     `}
