@@ -11,7 +11,7 @@ const data = {
   description: '스터디 카드 세부 내용',
 };
 
-export const all = (args) => (
+export const all = (args: any) => (
   <>
     <StudyCard {...args}/>
   </>

@@ -1,5 +1,5 @@
 import Modal, {ModalProps} from './Modal';
-import { RecoilRoot } from 'recoil';
+import {RecoilRoot} from 'recoil';
 
 export default {
   title: 'Patterns/Modal',
