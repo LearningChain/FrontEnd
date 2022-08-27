@@ -1,14 +1,14 @@
 import React from 'react';
 import {DateTime, Layout, Paragraph, Title} from './NotificationItem.styles';
 
-export interface BadgeProps {
+export interface NotificationItemProps {
   title: string;
   paragraph: string;
   active: boolean;
   date: Date;
 }
 
-const NotificationItem = ({...props}: BadgeProps) => {
+const NotificationItem = ({...props}: NotificationItemProps) => {
   return (
     <Layout active={props.active}>
       <Title>{props.title}</Title>
