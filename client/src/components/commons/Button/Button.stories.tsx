@@ -53,6 +53,12 @@ export const all = () => (
       취소
     </Button>
     <br />
+    <div>roundModalSmall</div>
+    <br />
+    <Button pattern={'roundModalSmall'} bright={'light'}>
+      취소
+    </Button>
+    <br />
     <Button pattern={'roundModal'} bright={'dark'}>
       확인
     </Button>

@@ -66,6 +66,17 @@ export const Layout = styled.button<ButtonProps>`
     `}
 
     ${(props) =>
+    props.pattern === 'roundModalSmall' &&
+    css`
+      width: 64px;
+      height: 30px;
+      border-radius: 40px;
+      border: ${props.bright === 'light' ? '1px solid #C8C8C8' : 'none'};
+      color: ${props.bright === 'light' ? '#000000' : '#FFFFFF'};
+      background: ${props.bright === 'light' ? '#FFFFFF' : '#949494'};
+    `}
+
+    ${(props) =>
     props.pattern === 'circleIcon' &&
     css`
       width: 50px;
