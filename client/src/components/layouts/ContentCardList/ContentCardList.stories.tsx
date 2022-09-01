@@ -1,3 +1,4 @@
+import React from 'react';
 import ContentCardList, {ContentCardListProps} from './ContentCardList';
 
 export default {

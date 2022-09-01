@@ -2,15 +2,17 @@ import React from 'react';
 import RewardSet, {rewardName} from '../../../_shared/rewards/basic';
 import {Layout} from './Reward.styles';
 
-interface RewardProps {
+export interface RewardProps {
   reward: rewardName;
   size: number;
   color?: string;
+  isActive?: boolean;
 }
 
-const Reward = ({reward, size, color}: RewardProps) => {
+const Reward = ({reward, size, color, ...props}: RewardProps) => {
+  console.log(props.isActive);
   return (
-    <Layout>
+    <Layout isActive={props.isActive}>
       <svg
         height={size}
         viewBox={RewardSet[reward].viewBox}
