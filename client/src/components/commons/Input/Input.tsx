@@ -7,6 +7,7 @@ export interface InputProps{
   message?: string;
   status: string;
   theme?: string;
+  pattern?: string;
   number?: number;
   isRequired?: boolean;
   disabled?: boolean;
@@ -28,7 +29,7 @@ const defaultProps = {
 
 // eslint-disable-next-line react/display-name
 const Input = forwardRef<InputRef, InputProps>(
-    ({title, placeholder, message, status, ...props}, ref) => {
+    ({title, placeholder, message, status, pattern, ...props}, ref) => {
       const inputRef = useRef<HTMLInputElement>(null);
 
       useImperativeHandle(ref, () => {
@@ -58,11 +59,11 @@ const Input = forwardRef<InputRef, InputProps>(
       }, []);
 
       return (
-        <Layout>
+        <Layout status={status} >
           <Label status={status} {...props}>
             {title}
           </Label>
-          <InputBox status={status} {...props}>
+          <InputBox status={status} {...props} pattern={pattern}>
             <InputText
               placeholder={placeholder}
               type={props.number ? 'number' : 'text'}
