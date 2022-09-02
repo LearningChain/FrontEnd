@@ -25,23 +25,6 @@ export const all = () => (
       placeholder="placeholder"
     />
     <br />
-    <div>Icons</div>
-    <Input theme="light" status="default" placeholder="placeholder" />
-    <Input theme="light" title="메일" status="default" placeholder="placeholder" />
-    <Input
-      theme="light"
-      title="메일"
-      message="가입한 이메일 주소를 입력하세요."
-      status="default"
-      placeholder="placeholder"
-    />
-    <Input
-      theme="light"
-      title="메일"
-      status="error"
-      message="이메일 형식이 잘못되었습니다."
-      placeholder="placeholder"
-    />
     <div>
         Default
     </div>
@@ -62,24 +45,7 @@ export const all = () => (
       placeholder="placeholder"
     />
     <br />
-    <div>
-      Icons
-    </div>
-    <Input theme="dark" status="default" placeholder="placeholder" />
-    <Input theme="dark" title="메일" status="default" placeholder="placeholder" />
-    <Input
-      theme="dark"
-      title="메일"
-      message="가입한 이메일 주소를 입력하세요."
-      status="default"
-      placeholder="placeholder"
-    />
-    <Input
-      theme="dark"
-      title="메일"
-      status="error"
-      message="이메일 형식이 잘못되었습니다."
-      placeholder="placeholder"
-    />
+    <Input theme="light" pattern='CommentInput' status="default" placeholder="placeholder"/>
+    <Input theme="dark" pattern='CommentInput' status="default" placeholder="placeholder"/>
   </Fragment>
 );

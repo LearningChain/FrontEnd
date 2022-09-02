@@ -27,12 +27,12 @@ interface BorderColorAtr {
 
 const textColor:ThemeAtr = {
   light: '#1B1F24',
-  dark: '#FFFFFF',
+  dark: '#D9D9D9',
 };
 
 const bgColor:ThemeAtr = {
   light: '#F1F3F5',
-  dark: '#292D32',
+  dark: '#FFFFFF',
 };
 
 const focusBgColor:ThemeAtr = {
@@ -88,7 +88,7 @@ const requiredColor: StatusAtr = {
   success: '#4A83EF',
 };
 
-export const Layout = styled.div`
+export const Layout = styled.div<InputProps>`
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -134,6 +134,14 @@ export const InputBox = styled.div<InputProps>`
         color: transparent;
       }
     `}
+  ${(props) =>
+    props.pattern == 'CommentInput' &&
+    css`
+      width: 688px;
+      height: 37px;
+      border-radius: 20px;
+      align-items: center;
+    `}
 `;
 
 export const InputText = styled.input<InputProps>`
@@ -146,7 +154,6 @@ export const InputText = styled.input<InputProps>`
   color: ${(props) => textColor[props.theme]};
   transition: 0.3s;
   ::placeholder {
-    color: "#868E96";
     font-size: "1rem";
   }
   :focus {
