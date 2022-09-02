@@ -1,6 +1,6 @@
 import ContentCard, {
   ContentCardProps,
-} from '../../../components/patterns/ContentCard/ContentCard';
+} from '../../patterns/ContentCard/ContentCard';
 import {Layout} from './ContentCardList.styles';
 
 export interface ContentCardListProps {
