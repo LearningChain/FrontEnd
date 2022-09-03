@@ -1,5 +1,4 @@
 import Badge from '../../commons/Badge/Badge';
-import React from 'react';
 import {Layout, DueDate, DueDateDescription, Title, Writer, UserName, WriterJob, StudyDetailBox, StudyDetailInfo, Category, Description, Content, TagBox} from './StudyDetail.styles';
 // import Avatar from '../../commons/Avatar/Avatar';
 import Button from '../../commons/Button';
