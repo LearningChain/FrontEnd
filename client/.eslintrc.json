@@ -14,7 +14,7 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "max-len": ["error", {"code": 2000}],
+    "max-len": ["error", {"code": 200000}],
     "linebreak-style": 0,
     // suppress errors for missing 'import React' in files
     "react/react-in-jsx-scope": "off",
