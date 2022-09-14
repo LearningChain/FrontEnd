@@ -37,6 +37,12 @@ export const UserName = styled.div`
   display: flex;
   font-size: 12px;
   font-weight: bold;
+
+  ::after{
+    content: '|';
+    color: #B1B1B1;
+    margin-left: 10px;
+  }
 `;
 
 export const WriterJob = styled.div`
