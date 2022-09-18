@@ -38,13 +38,13 @@ const data= [
 export const all = (args:RewardGridProps) => (
   <>
     <div>dark</div>
-      <RewardGrid theme='dark' data={data} />
+    <RewardGrid theme='dark' data={data} />
     <br/>
     <div>light</div>
-      <RewardGrid theme='light' data={data} />
+    <RewardGrid theme='light' data={data} />
     <br/>
     <div>Loading</div>
-      <RewardGrid theme='light' data={data} isLoading/>
+    <RewardGrid theme='light' data={data} isLoading/>
     <br/>
   </>
 );
