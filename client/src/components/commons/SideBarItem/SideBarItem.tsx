@@ -1,4 +1,5 @@
 import {Layout, TitleBox, Title, Content} from './SideBarItem.styles';
+import {Checkbox} from '../Checkbox';
 
 export interface SideBarItemProps {
   theme?: string;
@@ -8,11 +9,13 @@ export interface SideBarItemProps {
   pattern?: string;
 }
 
+// checkbox랑 라벨링 필요.
 const SideBarItem = ({title, description, isLoading, ...props}: SideBarItemProps) => {
   const text = isLoading ? '' : title;
   const desc = isLoading ? '' : description;
   return (
     <Layout {...props}>
+      <Checkbox />
       <TitleBox isLoading={isLoading} {...props}>
         <Title>{text}</Title>
       </TitleBox>
