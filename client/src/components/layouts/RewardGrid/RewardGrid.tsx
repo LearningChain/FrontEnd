@@ -1,5 +1,6 @@
 import {Layout, RewardItemLink} from './RewardGrid.styles';
 import Reward from '../../commons/Reward';
+import React from 'react';
 
 export interface RewardProps {
   reward: string;

@@ -1,6 +1,6 @@
 import {Layout} from './CommentInput.styles';
-import Input from '../../commons/Input'
-import Button from '../../commons/Button'
+import Input from '../../commons/Input';
+import Button from '../../commons/Button';
 
 export interface CommentInputProps {
   theme: string;
