@@ -16,7 +16,7 @@ export interface ReviewProps {
   nickname: string;
   good: string;
   bad: string;
-  data: string;
+  date: string;
 }
 
 const Review = ({...props}: ReviewProps) => {
@@ -77,7 +77,7 @@ const Review = ({...props}: ReviewProps) => {
           </Button>
           <Button pattern={'textAlone'}>답글달기</Button>
           <Button pattern={'textAlone'}>삭제</Button>
-          <Date>{props.data}</Date>
+          <Date>{props.date}</Date>
         </BottomInfo>
       </MainInfo>
     </Layout>

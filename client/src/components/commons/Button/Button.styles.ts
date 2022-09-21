@@ -6,6 +6,8 @@ export const Layout = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
   border: none;
+  margin:0;
+  padding:0;
   ${(props) =>
     props.pattern === 'filter' &&
     css`
@@ -93,7 +95,6 @@ export const Layout = styled.button<ButtonProps>`
       justify-content: center;
       background: #ffffff;
       svg {
-        margin-left: 5px;
         margin-right: 5px;
       }
     `}

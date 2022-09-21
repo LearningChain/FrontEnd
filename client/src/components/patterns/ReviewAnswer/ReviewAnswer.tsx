@@ -12,9 +12,8 @@ import {
 
 export interface ReviewAnswerProps {
   nickname: string;
-  good: string;
-  bad: string;
-  data: string;
+  content:string;
+  date: string;
 }
 
 const ReviewAnswer = ({...props}: ReviewAnswerProps) => {
@@ -28,7 +27,7 @@ const ReviewAnswer = ({...props}: ReviewAnswerProps) => {
       />
       <MainInfo>
         <NickName>{props.nickname}</NickName>
-        <Paragraph>{props.bad}</Paragraph>
+        <Paragraph>{props.content}</Paragraph>
         <BottomInfo>
           <Button pattern={'textAlone'} background={'#f6f6f6'}>
             수정
@@ -36,7 +35,7 @@ const ReviewAnswer = ({...props}: ReviewAnswerProps) => {
           <Button pattern={'textAlone'} background={'#f6f6f6'}>
             삭제
           </Button>
-          <Date>{props.data}</Date>
+          <Date>{props.date}</Date>
         </BottomInfo>
       </MainInfo>
     </Layout>

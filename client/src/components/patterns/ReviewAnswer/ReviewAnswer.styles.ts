@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  width: 320px;
+  width: calc(100% - 40px);
   height: 120px;
   background: #f6f6f6;
   position: relative;
   padding: 30px 20px 20px 20px;
   display: flex;
+  margin:0 0 20px 0;
   ::before {
     border-color: #f6f6f6 transparent;
     border-style: solid;
@@ -22,7 +23,7 @@ export const Layout = styled.div`
 `;
 
 export const TopInfo = styled.div`
-  width: 300px;
+  width: 100%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -54,10 +55,13 @@ export const Paragraph = styled.p`
 `;
 
 export const BottomInfo = styled.div`
-  width: 250px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  button{
+    margin-right:10px;
+  }
 `;
 
 export const Date = styled.div`
