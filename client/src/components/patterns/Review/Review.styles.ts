@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  width: 320px;
-  height: 360px;
+  width: 100%;
+  margin:0 0 20px 0;
 `;
 
 export const TopInfo = styled.div`
-  width: 300px;
+  width: 100%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -39,12 +39,15 @@ export const Paragraph = styled.p`
 `;
 
 export const BottomInfo = styled.div`
-  width: 250px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  button{
+    margin-right:10px;
+  }
 `;
 
 export const Date = styled.div`
   color: #b3b3b3;
+  font-size:11px;
 `;

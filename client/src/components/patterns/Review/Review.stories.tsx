@@ -1,4 +1,5 @@
 import Review from './Review';
+import styled from 'styled-components';
 
 export default {
   title: 'Patterns/Review',
@@ -6,7 +7,7 @@ export default {
 };
 
 export const all = () => (
-  <>
+  <Layout>
     <div>예시</div>
     <br />
     <Review
@@ -17,7 +18,11 @@ export const all = () => (
       bad={
         '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트'
       }
-      data={'2022-05-05'}
+      date={'2022-05-05'}
     />
-  </>
+  </Layout>
 );
+
+export const Layout = styled.div`
+  width: 500px;
+`;
