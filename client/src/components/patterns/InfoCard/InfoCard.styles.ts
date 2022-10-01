@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import {InfoCardProps} from './InfoCard';
 
 interface CardColorAtr {
-    [light: string] :string;
-    dark: string;
+  [light: string]: string;
+  dark: string;
 }
 
 const textColor: CardColorAtr = {
@@ -20,14 +20,14 @@ export const Layout = styled.li<InfoCardProps>`
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 80px;
-  padding: 0 10px;
+  height: 100px;
+  padding: 0 20px;
   margin: 0;
   background: ${(props) => backgroundColor[props.theme]};
   list-style: none;
   border-radius: 8px;
   color: ${(props) => textColor[props.theme]};
-  width: 240px;
+  width: 340px;
 `;
 
 export const Text = styled.div`
@@ -38,7 +38,7 @@ export const Text = styled.div`
 export const UserId = styled.span<InfoCardProps>`
   padding-left: 4px;
   color: ${(props) => textColor[props.theme]};
-  font-size: 1px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 12px;
 `;
@@ -46,7 +46,7 @@ export const UserId = styled.span<InfoCardProps>`
 export const UserDescription = styled.span<InfoCardProps>`
   padding: 4px 4px;
   color: ${(props) => textColor[props.theme]};
-  font-size: 1px;
+  font-size: 12px;
   font-weight: 100;
   line-height: 12px;
 `;
@@ -54,7 +54,7 @@ export const UserDescription = styled.span<InfoCardProps>`
 export const UserInfo = styled.span<InfoCardProps>`
   padding-top: 10px;
   color: ${(props) => textColor[props.theme]};
-  font-size: 1px;
+  font-size: 12px;
   font-weight: 100;
   line-height: 12px;
 `;
@@ -62,7 +62,7 @@ export const UserInfo = styled.span<InfoCardProps>`
 export const ContentsCount = styled.span<InfoCardProps>`
   padding: 2px 4px;
   color: ${(props) => textColor[props.theme]};
-  font-size: 1px;
+  font-size: 12px;
   font-weight: 100;
   line-height: 12px;
 `;
@@ -70,11 +70,12 @@ export const ContentsCount = styled.span<InfoCardProps>`
 export const ReccomandsCount = styled.span<InfoCardProps>`
   padding: 2px 4px;
   color: ${(props) => textColor[props.theme]};
-  font-size: 1px;
+  font-size: 12px;
   font-weight: 100;
   line-height: 12px;
 `;
 
 export const ButtonBox = styled.div`
   height: 70%;
+  margin: 0 0 0 auto;
 `;
