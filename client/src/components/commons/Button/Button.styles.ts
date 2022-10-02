@@ -134,4 +134,16 @@ export const Layout = styled.button<ButtonProps>`
       color: #b3b3b3;
       background: ${props.background ? props.background : '#FFFFFF'};
     `}
+    ${(props) =>
+    props.pattern === 'loginSubmit' &&
+    css`
+      width: 100%;
+      font-family: 'BMHANNAAir', 'Noto Sans KR';
+      background-color: ${props.color ? props.color : 'black'};
+      color: white;
+      border-radius: 10px;
+      font-size: 17px;
+      height: 50px;
+      cursor: pointer;
+    `}
 `;

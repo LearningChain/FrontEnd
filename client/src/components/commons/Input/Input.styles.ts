@@ -142,6 +142,14 @@ export const InputBox = styled.div<InputProps>`
       border-radius: 20px;
       align-items: center;
     `}
+  ${(props) =>
+    props.pattern == 'LoginInput' &&
+    css`
+      width: 320px;
+      height: 50px;
+      border-radius: 10px;
+      align-items: center;
+    `}
 `;
 
 export const InputText = styled.input<InputProps>`

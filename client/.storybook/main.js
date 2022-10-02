@@ -12,5 +12,6 @@ module.exports = {
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"
-  }
+  },
+  "addons": ["storybook-addon-react-router-v6"],
 }

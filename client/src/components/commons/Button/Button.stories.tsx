@@ -155,5 +155,6 @@ export const all = () => (
     <div>textAlone</div>
     <br />
     <Button pattern={'textAlone'}>text</Button>
+    <Button pattern={'loginSubmit'}>로그인</Button>
   </>
 );
