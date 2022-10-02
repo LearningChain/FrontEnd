@@ -1,10 +1,23 @@
-import {Layout, Text, UserId, UserDescription, UserInfo, ContentsCount, ReccomandsCount, ButtonBox} from './InfoCard.styles';
+import {
+  Layout,
+  Text,
+  UserId,
+  UserDescription,
+  UserInfo,
+  ContentsCount,
+  ReccomandsCount,
+  ButtonBox,
+} from './InfoCard.styles';
 import Avatar from '../../commons/Avatar/Avatar';
 import Button from '../../commons/Button/Button';
 
 export interface InfoCardProps {
   theme?: string;
   user?: UserProps;
+  name?: string;
+  description?: string;
+  contentscount?: number;
+  recommandscount?: number;
 }
 
 export interface UserProps {
@@ -13,7 +26,6 @@ export interface UserProps {
   contentscount?: number;
   recommandscount?: number;
 }
-
 
 const InfoCard = ({theme, user, ...props}: InfoCardProps) => {
   return (
@@ -25,11 +37,11 @@ const InfoCard = ({theme, user, ...props}: InfoCardProps) => {
         height={'50px'}
       />
       <Text>
-        <UserId>{user?.name}</UserId>
-        <UserDescription>{user?.description}</UserDescription>
+        <UserId>{props?.name}</UserId>
+        <UserDescription>{props?.description}</UserDescription>
         <UserInfo>
-          <ContentsCount>콘텐츠 {user?.contentscount}</ContentsCount>
-          <ReccomandsCount>추천 {user?.recommandscount}</ReccomandsCount>
+          <ContentsCount>콘텐츠 {props?.contentscount}</ContentsCount>
+          <ReccomandsCount>추천 {props?.recommandscount}</ReccomandsCount>
         </UserInfo>
       </Text>
       <ButtonBox>
