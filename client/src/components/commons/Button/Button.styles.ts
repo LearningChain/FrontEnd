@@ -6,19 +6,21 @@ export const Layout = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
   border: none;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   ${(props) =>
     props.pattern === 'filter' &&
     css`
       height: 30px;
-      padding: 0px 10px 0px 10px;
+      padding: 0px 16.5px 0px 16.5px;
+      border: ${props.bright === 'light' ? '1px solid #e7e7e7;' : 'none'};
       border-radius: 15px;
       background: ${props.background
         ? props.background
         : props.bright === 'light'
-        ? '#eaeaea'
-        : '#A4A4A4'};
+        ? '#ffffff'
+        : '#000000'};
+      color: ${props.bright === 'light' ? '#000000' : '#ffffff'};
     `}
 
   ${(props) =>
