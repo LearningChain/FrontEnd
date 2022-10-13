@@ -1,9 +1,9 @@
 import {
   Layout,
   Text,
-  UserId,
+  UserNickname,
   UserDescription,
-  UserInfo,
+  UserCountInfo,
   ContentsCount,
   ReccomandsCount,
   ButtonBox,
@@ -14,38 +14,38 @@ import Button from '../../commons/Button/Button';
 export interface InfoCardProps {
   theme?: string;
   user?: UserProps;
-  name?: string;
+  nickname?: string;
   description?: string;
   contentscount?: number;
   recommandscount?: number;
 }
 
 export interface UserProps {
-  name?: string;
+  nickname?: string;
   description?: string;
   contentscount?: number;
   recommandscount?: number;
 }
 
-const InfoCard = ({theme, user, ...props}: InfoCardProps) => {
+const InfoCard = ({...props}: UserProps) => {
   return (
-    <Layout theme={theme} {...props}>
+    <Layout {...props}>
       <Avatar
         pattern={'noneIconAvater'}
         useImg={'/testlink'}
-        width={'50px'}
-        height={'50px'}
+        width={'65px'}
+        height={'65px'}
       />
       <Text>
-        <UserId>{props?.name}</UserId>
+        <UserNickname>{props?.nickname}</UserNickname>
         <UserDescription>{props?.description}</UserDescription>
-        <UserInfo>
+        <UserCountInfo>
           <ContentsCount>콘텐츠 {props?.contentscount}</ContentsCount>
           <ReccomandsCount>추천 {props?.recommandscount}</ReccomandsCount>
-        </UserInfo>
+        </UserCountInfo>
       </Text>
       <ButtonBox>
-        <Button bright={theme} pattern={'roundModalSmall'}>
+        <Button bright={'light'} pattern={'filter'}>
           <div>팔로우</div>
         </Button>
       </ButtonBox>
