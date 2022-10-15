@@ -9,8 +9,13 @@ export const all = () => (
   <>
     <ButtonList
       pattern={'filter'}
-      bright={'light'}
-      childrenArr={['전체', '개발', '디자인', '기획']}
+      buttonInfos={{
+        전체: 'black',
+        개발: 'light',
+        디자인: 'light',
+        기획: 'light',
+      }}
+      change={() => {}}
     />
   </>
 );

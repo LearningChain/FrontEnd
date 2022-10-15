@@ -1,15 +1,9 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
-export const Layout = styled.div<{boxWidth?: string; boxHeight?: string}>`
+export const Layout = styled.div`
   display: flex;
-  ${(props) =>
-    props.boxWidth &&
-    css`
-      width: ${props.boxWidth};
-    `}
-  ${(props) =>
-    props.boxHeight &&
-    css`
-      width: ${props.boxHeight};
-    `}
+  margin: 0 0 20px 0;
+  button + button {
+    margin: 0 0 0 10px;
+  }
 `;
