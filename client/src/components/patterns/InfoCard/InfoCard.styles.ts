@@ -2,12 +2,15 @@ import styled from 'styled-components';
 import {InfoCardProps} from './InfoCard';
 
 export const Layout = styled.li`
+  list-style: none;
+`;
+
+export const SubLayout = styled.div`
   display: flex;
   width: 270px;
   height: 73px;
   padding: 20px 10px;
   margin: 0;
-  list-style: none;
   border: 1px solid #e7e7e7;
   border-radius: 10px;
 `;
