@@ -7,8 +7,9 @@ export const Layout = styled.button<SwitchProps>`
   align-items: center;
   background: white;
   border: none;
+  padding: 0;
   ${(props) =>
-    props.pattern === 'mobileHome' &&
+    props.pattern === 'mobileContent' &&
     css`
       width: 160px;
       height: 40px;
@@ -16,12 +17,15 @@ export const Layout = styled.button<SwitchProps>`
       border-bottom: 2px solid ${props.selected ? '#919191' : '#D9D9D9'};
     `}
   ${(props) =>
-    props.pattern === 'mobileContent' &&
+    props.pattern === 'mobileHome' &&
     css`
-      width: 90px;
-      height: 40px;
-      color: ${props.selected ? '#333333' : '#AEAEAE'};
-      border-bottom: 2px solid ${props.selected ? '#333333' : '#F1F1F1'};
+      width: 160px;
+      font-weight: ${props.selected ? '600' : '400'};
+      color: ${props.selected ? '#232323' : '#AEAEAE'};
+      div {
+        padding: 0 0 5px 0;
+        border-bottom: ${props.selected ? '2px solid #ACED22' : 'none'};
+      }
     `}
     ${(props) =>
     props.pattern === 'desktopContent' &&

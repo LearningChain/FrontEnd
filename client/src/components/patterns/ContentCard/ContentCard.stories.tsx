@@ -6,20 +6,17 @@ export default {
 };
 
 const data = {
-  title: '콘텐츠 제목',
+  title: '플랫폼이 집어삼키는 세상',
   writer: '글쓴이',
-  description: '두줄까지 미리보기 제공 두줄까지 미리보기 제공 두줄까지 미리보기 제공 두줄까지 미리보기 제공 ',
+  description:
+    '플랫폼 혁신이 주역이 되는 기업, 플랫폼이 기업의 성패를 좌우할것이다.',
 };
 
 export const all = (args: any) => (
   <>
     <div>ContentCardLight</div>
     <br />
-    <ContentCard theme={'light'} {...args}/>
-    <br />
-    <div>ContentCardDark</div>
-    <br />
-    <ContentCard theme={'dark'} {...args}/>
+    <ContentCard theme={'light'} {...args} />
     <br />
   </>
 );

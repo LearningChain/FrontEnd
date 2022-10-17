@@ -4,12 +4,13 @@ export interface SwitchProps {
   pattern: string;
   selected: boolean;
   children: React.ReactNode;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Switch = ({children, ...props}: SwitchProps) => {
   return (
     <Layout {...props}>
-      {children}
+      <div>{children}</div>
     </Layout>
   );
 };

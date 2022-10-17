@@ -17,7 +17,7 @@ export const Layout = styled.img<ImageBoxProps>`
     css`
       width: 125px;
       height: 125px;
-      border-radius: 10px;
+      border-radius: 10px 0 0 10px;
       background: #f0f0f0;
     `}
 
