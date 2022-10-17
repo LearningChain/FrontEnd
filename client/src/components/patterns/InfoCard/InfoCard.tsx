@@ -7,6 +7,7 @@ import {
   ContentsCount,
   ReccomandsCount,
   ButtonBox,
+  SubLayout,
 } from './InfoCard.styles';
 import Avatar from '../../commons/Avatar/Avatar';
 import Button from '../../commons/Button/Button';
@@ -30,25 +31,27 @@ export interface UserProps {
 const InfoCard = ({...props}: UserProps) => {
   return (
     <Layout {...props}>
-      <Avatar
-        pattern={'noneIconAvater'}
-        useImg={'/testlink'}
-        width={'65px'}
-        height={'65px'}
-      />
-      <Text>
-        <UserNickname>{props?.nickname}</UserNickname>
-        <UserDescription>{props?.description}</UserDescription>
-        <UserCountInfo>
-          <ContentsCount>콘텐츠 {props?.contentscount}</ContentsCount>
-          <ReccomandsCount>추천 {props?.recommandscount}</ReccomandsCount>
-        </UserCountInfo>
-      </Text>
-      <ButtonBox>
-        <Button bright={'light'} pattern={'filter'}>
-          <div>팔로우</div>
-        </Button>
-      </ButtonBox>
+      <SubLayout>
+        <Avatar
+          pattern={'noneIconAvater'}
+          useImg={'/testlink'}
+          width={'65px'}
+          height={'65px'}
+        />
+        <Text>
+          <UserNickname>{props?.nickname}</UserNickname>
+          <UserDescription>{props?.description}</UserDescription>
+          <UserCountInfo>
+            <ContentsCount>콘텐츠 {props?.contentscount}</ContentsCount>
+            <ReccomandsCount>추천 {props?.recommandscount}</ReccomandsCount>
+          </UserCountInfo>
+        </Text>
+        <ButtonBox>
+          <Button bright={'light'} pattern={'filter'}>
+            <div>팔로우</div>
+          </Button>
+        </ButtonBox>
+      </SubLayout>
     </Layout>
   );
 };

@@ -1,8 +1,12 @@
-import {useEffect, useState} from 'react';
-import {useMediaQuery} from 'react-responsive';
 import Button from '../../../components/commons/Button';
 import InfoCard from '../../../components/patterns/InfoCard';
-import {Layout, TitleBlock, UserList} from './UserRankSlider.styles';
+import {
+  DummyBox,
+  Layout,
+  Title,
+  TitleBlock,
+  UserList,
+} from './UserRankSlider.styles';
 
 export interface UserRankSliderProps {
   users: {
@@ -15,24 +19,11 @@ export interface UserRankSliderProps {
 }
 
 const UserRankSlider = ({...props}: UserRankSliderProps) => {
-  const [view, setView] = useState(3);
-  const two = useMediaQuery({query: '(max-width:1200px)'});
-  const one = useMediaQuery({query: '(max-width:790px)'});
-  useEffect(() => {
-    if (two && one) {
-      setView(1);
-    } else if (two && !one) {
-      setView(2);
-    } else {
-      setView(3);
-    }
-  }, [two, one]);
-
   return (
     <Layout>
       <TitleBlock>
-        <div></div>
-        <h1>Top 러닝체인 회원</h1>
+        <DummyBox></DummyBox>
+        <Title>Top 러닝체인 회원</Title>
         <Button pattern={'iconWith'}>
           <div>더보기</div>
           <svg
@@ -53,15 +44,14 @@ const UserRankSlider = ({...props}: UserRankSliderProps) => {
         </Button>
       </TitleBlock>
       <UserList>
-        {props.users.slice(0, view).map((user) => {
+        {props.users.map((user, index) => {
           return (
             <InfoCard
-              theme={'light'}
-              name={user.name}
+              nickname={user.name}
               description={user.description}
               contentscount={user.contentscount}
               recommandscount={user.recommandscount}
-              key={user.id}
+              key={index}
             />
           );
         })}
