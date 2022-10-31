@@ -99,7 +99,7 @@ const ContentRecommendation = () => {
     스타트업: 'light',
   });
   const {data} = useQuery<unknown, unknown, Data[]>(
-    ['home', 'content'],
+    ['main', 'content'],
     getContent,
     {
       refetchOnWindowFocus: false,
