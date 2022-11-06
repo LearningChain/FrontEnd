@@ -1,6 +1,8 @@
+import Icon from '../../../components/foundations/Icon/Icon';
 import Button from '../../../components/commons/Button';
 import InfoCard from '../../../components/patterns/InfoCard';
 import {
+  ButtonWrap,
   DummyBox,
   Layout,
   Title,
@@ -18,35 +20,36 @@ export interface UserRankSliderProps {
   }[];
 }
 
-const UserRankSlider = ({...props}: UserRankSliderProps) => {
+const UserRankSlider = () => {
+  const mokedData = new Array(10).fill(0).map((_, index) => ({
+    id: index + 1,
+    name: '승주',
+    description: 'react공부중',
+    contentscount: 44,
+    recommandscount: 1445,
+  }));
   return (
     <Layout>
       <TitleBlock>
         <DummyBox></DummyBox>
         <Title>Top 러닝체인 회원</Title>
-        <Button pattern={'iconWith'}>
-          <div>더보기</div>
-          <svg
-            width="21"
-            height="21"
-            viewBox="0 0 21 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.59082 5.72754L13.3635 10.5003L8.59082 15.273"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+        <ButtonWrap>
+          <Button pattern={'iconWith'}>
+            <div>더보기</div>
+            <Icon
+              icon={'rightArrow'}
+              width={'20'}
+              height={'20'}
+              viewBox={'1 1 20 20'}
             />
-          </svg>
-        </Button>
+          </Button>
+        </ButtonWrap>
       </TitleBlock>
       <UserList>
-        {props.users.map((user, index) => {
+        {mokedData.map((user, index) => {
           return (
             <InfoCard
+              id={user.id}
               nickname={user.name}
               description={user.description}
               contentscount={user.contentscount}

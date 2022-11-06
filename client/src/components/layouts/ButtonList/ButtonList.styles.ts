@@ -6,4 +6,9 @@ export const Layout = styled.div`
   button + button {
     margin: 0 0 0 10px;
   }
+  white-space: nowrap;
+  overflow-x: scroll;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
 `;

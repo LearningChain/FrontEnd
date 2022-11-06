@@ -37,6 +37,19 @@ export const SubLayout = styled.div`
   border-radius: 10px;
 `;
 
+export const Infos = styled.div`
+  width: 130px;
+`;
+
+export const TopInfo = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 0 3px 0;
+`;
+
+export const BottomInfo = styled.div``;
+
 export const Text = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,7 +58,7 @@ export const Text = styled.div`
 
 export const UserNickname = styled.span`
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 5px 0;
 `;
 
@@ -53,6 +66,9 @@ export const UserDescription = styled.span`
   font-size: 14px;
   color: #808080;
   margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 `;
 
 export const UserCountInfo = styled.span`
@@ -67,6 +83,5 @@ export const ContentsCount = styled.span`
 export const ReccomandsCount = styled.span``;
 
 export const ButtonBox = styled.div`
-  height: 70%;
   margin: 0 0 0 auto;
 `;

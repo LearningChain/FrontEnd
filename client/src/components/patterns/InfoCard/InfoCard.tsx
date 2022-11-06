@@ -11,6 +11,8 @@ import {
   MobileSubLayout,
   MobileText,
   Rank,
+  TopInfo,
+  Infos,
 } from './InfoCard.styles';
 import Avatar from '../../commons/Avatar/Avatar';
 import Button from '../../commons/Button/Button';
@@ -70,18 +72,22 @@ const InfoCard = ({...props}: InfoCardProps) => {
             height={'65px'}
           />
           <Text>
-            <UserNickname>{props?.nickname}</UserNickname>
-            <UserDescription>{props?.description}</UserDescription>
+            <TopInfo>
+              <Infos>
+                <UserNickname>{props?.nickname}</UserNickname>
+                <UserDescription>{props?.description}</UserDescription>
+              </Infos>
+              <ButtonBox>
+                <Button bright={'light'} pattern={'filter'}>
+                  <div>팔로우</div>
+                </Button>
+              </ButtonBox>
+            </TopInfo>
             <UserCountInfo>
               <ContentsCount>콘텐츠 {props?.contentscount}</ContentsCount>
               <ReccomandsCount>추천 {props?.recommandscount}</ReccomandsCount>
             </UserCountInfo>
           </Text>
-          <ButtonBox>
-            <Button bright={'light'} pattern={'filter'}>
-              <div>팔로우</div>
-            </Button>
-          </ButtonBox>
         </SubLayout>
       </Layout>
     );

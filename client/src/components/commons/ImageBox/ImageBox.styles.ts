@@ -21,6 +21,15 @@ export const Layout = styled.img<ImageBoxProps>`
       background: #f0f0f0;
     `}
 
+    ${(props) =>
+    props.pattern === 'cardImageDesktop' &&
+    css`
+      width: 380px;
+      height: 164px;
+      border-radius: 10px 10px 0 0;
+      background: #f0f0f0;
+    `}
+
   ${(props) =>
     props.pattern === 'loginImage' &&
     css`

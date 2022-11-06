@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import {ContentCardProps} from './ContentCard';
 
-export const Layout = styled.li<ContentCardProps>`
+export const Layout = styled.li`
   display: flex;
   align-items: center;
   height: 125px;
@@ -10,7 +9,17 @@ export const Layout = styled.li<ContentCardProps>`
   list-style: none;
   border: 1px solid #e7e7e7;
   border-radius: 10px;
-  width: 324px;
+  width: 100%;
+`;
+
+export const DesktopLayout = styled.li`
+  width: 380px;
+  height: 300px;
+  padding: 0 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
 `;
 
 export const Text = styled.div`
