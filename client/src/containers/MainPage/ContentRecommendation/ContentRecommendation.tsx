@@ -7,24 +7,24 @@ import {AddContents, Layout, Title} from './ContentRecommendation.styles';
 import {ContentCardProps} from '../../../components/patterns/ContentCard/ContentCard';
 import {useMediaQuery} from 'react-responsive';
 import SwitchList from '../../../components/layouts/SwitchList';
+import mockAxios from '../../../mocked';
+import Icon from '../../../components/foundations/Icon/Icon';
 
 // 데이터를 모킹하는 로직입니다.
-const MockAdapter = require('axios-mock-adapter');
-const mock = new MockAdapter(axios, {delayResponse: 2000});
-const makeMockedData = (page: number, category: string) =>
+const makeMockedData = (category: string) =>
   new Array(5).fill(0).map((_, index) => ({
-    id: page * 5 + index + 1,
-    title: `${category} 플랫폼이 집어삼키는 세상 ${page * 5 + index + 1}`,
+    id: index + 1,
+    title: `${category} 플랫폼이 집어삼키는 세상 ${index + 1}`,
     writer: '글쓴이',
     description:
       '플랫폼 혁신이 주역이 되는 기업, 플랫폼이 기업의 성패를 좌우할것이다.',
   }));
 
 ['전체', '개발', '디자인', '기획', '스타트업'].forEach((name) => {
-  new Array(10).fill(0).map((_, index) => {
-    mock
-      .onGet('/main/content', {params: {category: name, page: index + 1}})
-      .reply(200, makeMockedData(index, name));
+  new Array(10).fill(0).map(() => {
+    mockAxios
+      .onGet('/main/content', {params: {category: name}})
+      .reply(200, makeMockedData(name));
   });
 });
 
@@ -32,19 +32,15 @@ interface ApiData {
   [index: string]: ContentCardProps[];
 }
 
-const getContent = (category: string, page: number) => async () => {
-  const {data} = await axios.get(`/main/content`, {params: {category, page}});
+const getContent = (category: string) => async () => {
+  const {data} = await axios.get(`/main/content`, {params: {category}});
   return data;
 };
 
 const ContentRecommendation = () => {
   const [swicthSelected, setSwitchSelected] = useState('콘텐츠');
-  const [contentStatus, setContentStatus] = useState({
-    category: '전체',
-    page: 1,
-  });
+  const [category, setCategory] = useState('전체');
   const [data, setData] = useState<any>();
-  const [keepPreviousData, setKeepPreviousData] = useState(true);
   const [buttonStatus, setButtonStatus] = useState<{[index: string]: string}>({
     전체: 'dark',
     개발: 'light',
@@ -55,33 +51,20 @@ const ContentRecommendation = () => {
   const mobile = useMediaQuery({maxWidth: 768});
   const queryClient = useQueryClient();
 
-  const {isLoading, isFetching} = useQuery<unknown, unknown, ApiData>(
-    [
-      'main',
-      'recommend',
-      'content',
-      contentStatus.category,
-      contentStatus.page,
-    ],
-    getContent(contentStatus.category, contentStatus.page),
+  const {isLoading} = useQuery<unknown, unknown, ApiData>(
+    ['main', 'recommend', 'content', category],
+    getContent(category),
     {
       refetchOnWindowFocus: false,
       retry: 0,
-      keepPreviousData,
       onSuccess: (data) => {
         setData(
-          new Array(contentStatus.page)
-            .fill(0)
-            .map((_, index) => {
-              return queryClient.getQueryData<ContentCardProps[]>([
-                'main',
-                'recommend',
-                'content',
-                contentStatus.category,
-                index + 1,
-              ]) as ContentCardProps[];
-            })
-            .flat(),
+          queryClient.getQueryData<ContentCardProps[]>([
+            'main',
+            'recommend',
+            'content',
+            category,
+          ]) as ContentCardProps[],
         );
       },
       onError: (e) => {},
@@ -113,8 +96,7 @@ const ContentRecommendation = () => {
         buttonInfos={buttonStatus}
         change={(keyword) => {
           changeButtonType(keyword);
-          setContentStatus({category: keyword, page: 1});
-          setKeepPreviousData(false);
+          setCategory(keyword);
         }}
       />
       {isLoading ? (
@@ -122,16 +104,14 @@ const ContentRecommendation = () => {
       ) : (
         <>
           <ContentCardList data={data} />
-          <AddContents
-            onClick={() => {
-              setContentStatus({
-                ...contentStatus,
-                page: contentStatus.page + 1,
-              });
-              setKeepPreviousData(true);
-            }}
-          >
-            {isFetching ? '로딩중' : '더보기'}
+          <AddContents to={'/content'}>
+            <Icon
+              icon={'rightArrow'}
+              width={'20'}
+              height={'20'}
+              viewBox={'1 1 20 20'}
+            />
+            더보기
           </AddContents>
         </>
       )}
