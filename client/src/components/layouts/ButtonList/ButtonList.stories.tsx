@@ -16,6 +16,7 @@ export const all = () => (
         기획: 'light',
       }}
       change={() => {}}
+      wrap={'scroll'}
     />
   </>
 );

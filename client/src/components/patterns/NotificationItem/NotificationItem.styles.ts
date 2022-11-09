@@ -1,20 +1,12 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div<{active: boolean}>`
-  width: 320px;
-  height: 147px;
-  background: ${(props) => (props.active ? '#FFEEEE' : 'white')};
-  padding: 20px;
+  width: calc(100% - 40px);
+  margin: 0 20px 0 20px;
+  padding: 30px 0 30px 0;
   position: relative;
-  ::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    bottom: 0;
-    height: 1px;
-    width: 320px; /* or 100px */
-    border-bottom: 1px solid #e7e7e7;
-  }
+  display: flex;
+  border-bottom: 1px solid #e7e7e7;
 `;
 
 export const Title = styled.h1`
@@ -23,19 +15,25 @@ export const Title = styled.h1`
   font-size: 14px;
 `;
 
+export const TextBox = styled.div`
+  width: calc(100% - 115px);
+  margin: 0 0 0 20px;
+`;
+
 export const Paragraph = styled.p`
-  font-weight: 300;
   font-size: 14px;
   line-height: 30px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin: 0;
 `;
 
-export const DateTime = styled.p`
+export const DateTime = styled.div`
   font-weight: 600;
   font-size: 14px;
   color: #b3b3b3;
-  float: right;
+  float: left;
+  margin: 20px 0 0 0;
 `;

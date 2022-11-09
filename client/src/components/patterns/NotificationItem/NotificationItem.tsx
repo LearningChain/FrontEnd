@@ -1,8 +1,10 @@
+import Avatar from '../../../components/commons/Avatar';
+import Icon from '../../../components/foundations/Icon/Icon';
 import React from 'react';
-import {DateTime, Layout, Paragraph, Title} from './NotificationItem.styles';
+import {DateTime, Layout, Paragraph, TextBox} from './NotificationItem.styles';
 
 export interface NotificationItemProps {
-  title: string;
+  user: string;
   paragraph: string;
   active: boolean;
   date: Date;
@@ -11,9 +13,22 @@ export interface NotificationItemProps {
 const NotificationItem = ({...props}: NotificationItemProps) => {
   return (
     <Layout active={props.active}>
-      <Title>{props.title}</Title>
-      <Paragraph>{props.paragraph}</Paragraph>
-      <DateTime>{setDateLatest(props.date)}</DateTime>
+      <Avatar
+        pattern={'rightIconAvater'}
+        icon={
+          <Icon
+            icon="redDot"
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            stroke=""
+          />
+        }
+      />
+      <TextBox>
+        <Paragraph>{props.paragraph}</Paragraph>
+        <DateTime>{setDateLatest(props.date)}</DateTime>
+      </TextBox>
     </Layout>
   );
 };

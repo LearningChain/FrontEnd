@@ -98,6 +98,7 @@ const ContentRecommendation = () => {
           changeButtonType(keyword);
           setCategory(keyword);
         }}
+        wrap={'scroll'}
       />
       {isLoading ? (
         <div>로딩중</div>

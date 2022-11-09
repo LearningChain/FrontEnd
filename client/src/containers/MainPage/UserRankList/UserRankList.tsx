@@ -1,7 +1,16 @@
+import mockAxios from '../../../mocked';
 import axios from 'axios';
 import {useMutation, useQuery} from 'react-query';
 import InfoCard from '../../../components/patterns/InfoCard';
-import {Layout, UserList} from './UserRankList.styles';
+import {
+  DummyBox,
+  Layout,
+  Title,
+  TitleBlock,
+  UserList,
+} from './UserRankList.styles';
+import Button from '../../../components/commons/Button';
+import Icon from '../../../components/foundations/Icon/Icon';
 
 interface Data {
   users: {
@@ -17,14 +26,37 @@ interface Data {
     rank: number;
   };
 }
-const UserRankList = () => {
-  const getContent = async () => {
-    const {data} = await axios.get('/home/content');
+
+const makeMockedData = () =>
+  new Array(10).fill(0).map((_, index) => ({
+    id: index + 1,
+    name: `test ${index + 1}`,
+    description: `글쓴이 ${index + 1}`,
+    followed: Boolean(Math.floor(Math.random() * 2)),
+  }));
+
+mockAxios.onGet('/main/ranklist').reply(200, {
+  users: makeMockedData(),
+  myInfo: {
+    id: 11,
+    name: `test me`,
+    description: `글쓴이 me`,
+    rank: 150,
+  },
+});
+
+interface UserRankListProps {
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const UserRankList = ({setModal}: UserRankListProps) => {
+  const getContent = () => async () => {
+    const {data} = await axios.get(`/main/ranklist`);
     return data;
   };
   const {data} = useQuery<unknown, unknown, Data>(
     ['main', 'ranklist'],
-    getContent,
+    getContent(),
     {
       refetchOnWindowFocus: false,
       retry: 0,
@@ -55,6 +87,25 @@ const UserRankList = () => {
   } else {
     return (
       <Layout>
+        <TitleBlock>
+          <Button
+            pattern={'iconAlone'}
+            background={'#ACED22'}
+            onClick={() => {
+              setModal(false);
+            }}
+          >
+            <Icon
+              icon="leftArrow"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke=""
+            />
+          </Button>
+          <Title>TOP 러닝체인 회원</Title>
+          <DummyBox />
+        </TitleBlock>
         <UserList>
           {data.users.map((user, index) => {
             return (
@@ -70,18 +121,18 @@ const UserRankList = () => {
               />
             );
           })}
+          <br />
+          <br />
+          <br />
+          <InfoCard
+            id={data.myInfo.id}
+            nickname={data.myInfo.name}
+            description={data.myInfo.description}
+            key={data.myInfo.id}
+            shorted={true}
+            rank={data.myInfo.rank}
+          />
         </UserList>
-        <br />
-        <br />
-        <br />
-        <InfoCard
-          id={data.myInfo.id}
-          nickname={data.myInfo.name}
-          description={data.myInfo.description}
-          key={data.myInfo.id}
-          shorted={true}
-          rank={data.myInfo.rank}
-        />
       </Layout>
     );
   }

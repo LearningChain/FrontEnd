@@ -7,7 +7,7 @@ export const Layout = styled.li`
 export const MobileSubLayout = styled.div`
   display: flex;
   align-items: center;
-  width: 270px;
+  width: 100%;
   height: 60px;
   margin: 0;
 `;

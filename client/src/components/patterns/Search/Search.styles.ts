@@ -1,20 +1,17 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  width: 278px;
+  width: 100%;
   height: 33px;
-  background: #efefef;
-  border-radius: 20px;
   display: flex;
   align-items: center;
-  padding-left: 10px;
+  border-bottom: 1px solid #e7e7e7;
 `;
 
 export const Input = styled.input`
-  width: 200px;
+  width: 100%;
   height: 23px;
   color: #b3b3b3;
-  background: #efefef;
   border: none;
   margin-left: 10px;
 `;
