@@ -12,7 +12,7 @@ export const Layout = styled.button<ButtonProps>`
     props.pattern === 'filter' &&
     css`
       height: 30px;
-      padding: 0px 16.5px 0px 16.5px;
+      padding: 0px 14px 0px 14px;
       border: ${props.bright === 'light' ? '1px solid #e7e7e7;' : 'none'};
       border-radius: 15px;
       background: ${props.background
@@ -72,12 +72,12 @@ export const Layout = styled.button<ButtonProps>`
     ${(props) =>
     props.pattern === 'roundModalSmall' &&
     css`
-      width: 64px;
+      width: 70px;
       height: 30px;
       border-radius: 40px;
       border: ${props.bright === 'light' ? '1px solid #C8C8C8' : 'none'};
       color: ${props.bright === 'light' ? '#000000' : '#FFFFFF'};
-      background: ${props.bright === 'light' ? '#FFFFFF' : '#949494'};
+      background: ${props.bright === 'light' ? '#FFFFFF' : '#333333'};
     `}
 
     ${(props) =>
@@ -92,9 +92,9 @@ export const Layout = styled.button<ButtonProps>`
     ${(props) =>
     props.pattern === 'iconWith' &&
     css`
-      height: 23px;
       display: flex;
       justify-content: center;
+      align-items: center;
       background: #ffffff;
       svg {
         margin-right: 5px;

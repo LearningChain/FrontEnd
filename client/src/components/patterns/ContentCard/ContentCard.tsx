@@ -1,23 +1,46 @@
-import {Layout, Text, Title, Description, Writer} from './ContentCard.styles';
+import {
+  Layout,
+  Text,
+  Title,
+  Description,
+  Writer,
+  DesktopLayout,
+} from './ContentCard.styles';
 import ImageBox from '../../commons/ImageBox/ImageBox';
+import {useMediaQuery} from 'react-responsive';
 
 export interface ContentCardProps {
-  title?: string;
-  description?: string;
-  writer?: string;
+  id: number;
+  title: string;
+  description: string;
+  writer: string;
 }
 
 const ContentCard = ({...props}: ContentCardProps) => {
-  return (
-    <Layout {...props}>
-      <ImageBox pattern={'cardImage'} src={'/test'} alt={'test'} />
-      <Text>
-        <Title>{props.title}</Title>
-        <Description>{props.description}</Description>
-        <Writer>by. {props.writer}</Writer>
-      </Text>
-    </Layout>
-  );
+  const mobile = useMediaQuery({maxWidth: 768});
+  if (mobile) {
+    return (
+      <Layout>
+        <ImageBox pattern={'cardImage'} src={'/test'} alt={'test'} />
+        <Text>
+          <Title>{props.title}</Title>
+          <Description>{props.description}</Description>
+          <Writer>by. {props.writer}</Writer>
+        </Text>
+      </Layout>
+    );
+  } else {
+    return (
+      <DesktopLayout>
+        <ImageBox pattern={'cardImageDesktop'} src={'/test'} alt={'test'} />
+        <Text>
+          <Title>{props.title}</Title>
+          <Description>{props.description}</Description>
+          <Writer>by. {props.writer}</Writer>
+        </Text>
+      </DesktopLayout>
+    );
+  }
 };
 
 export default ContentCard;

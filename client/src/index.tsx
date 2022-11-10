@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {RecoilRoot} from 'recoil';
 import {QueryClient, QueryClientProvider} from 'react-query';
+import {BrowserRouter} from 'react-router-dom';
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -13,7 +14,9 @@ root.render(
   <RecoilRoot>
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </QueryClientProvider>
     </React.StrictMode>
   </RecoilRoot>,

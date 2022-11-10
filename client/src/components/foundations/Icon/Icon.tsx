@@ -4,19 +4,22 @@ import icons from '../../../_shared/icons/basic';
 interface IconProps {
   icon: string;
   block: string;
+  stroke?: string;
+  width?: string;
+  height?: string;
+  viewBox?: string;
 }
 
 const Icon = ({icon, block, ...props}: IconProps) => {
   return (
     <Svg
-      viewBox="0 0 24 24"
-      width="24"
-      height="24"
+      viewBox={props.viewBox === undefined ? '0 0 30 30' : props.viewBox}
+      width={props.width === undefined ? '30' : props.width}
+      height={props.height === undefined ? '30' : props.height}
+      stroke={props.stroke === undefined ? 'black' : props.stroke}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       block={block}
-      stroke="currentColor"
-      {...props}
     >
       {icons[icon]}
     </Svg>

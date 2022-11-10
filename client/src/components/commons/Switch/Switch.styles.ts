@@ -7,6 +7,8 @@ export const Layout = styled.button<SwitchProps>`
   align-items: center;
   background: white;
   border: none;
+  font-size: 16px;
+  font-weight: 600;
   padding: 0;
   ${(props) =>
     props.pattern === 'mobileContent' &&
@@ -19,7 +21,7 @@ export const Layout = styled.button<SwitchProps>`
   ${(props) =>
     props.pattern === 'mobileHome' &&
     css`
-      width: 160px;
+      width: 100%;
       font-weight: ${props.selected ? '600' : '400'};
       color: ${props.selected ? '#232323' : '#AEAEAE'};
       div {
@@ -36,5 +38,11 @@ export const Layout = styled.button<SwitchProps>`
       font-weight: bold;
       color: ${props.selected ? '#333333' : '#AEAEAE'};
       border-bottom: 4px solid ${props.selected ? '#333333' : '#F1F1F1'};
+    `}
+    ${(props) =>
+    props.pattern === 'desktopHome' &&
+    css`
+      font-size: 14px;
+      font-weight: ${props.selected ? '600' : '400'};
     `}
 `;

@@ -4,7 +4,7 @@ import ContentCard, {
 import {Layout} from './ContentCardList.styles';
 
 export interface ContentCardListProps {
-  data: ContentCardProps[] | undefined;
+  data?: ContentCardProps[];
 }
 
 const ContentCardList = ({...props}: ContentCardListProps) => {
@@ -16,7 +16,8 @@ const ContentCardList = ({...props}: ContentCardListProps) => {
             title={itemObj.title}
             description={itemObj.description}
             writer={itemObj.writer}
-            key={index}
+            id={itemObj.id}
+            key={itemObj.id}
           />
         );
       })}
