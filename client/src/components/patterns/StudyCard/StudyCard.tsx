@@ -1,33 +1,47 @@
+import Badge from '../../commons/Badge';
 import React from 'react';
-import {Layout, ImageBox, Image, TextBox, Title, Writer, Description} from './StudyCard.styles';
-import testimg from '../../../imgs/testImgs/test.jpg';
+import {Layout, Content, Header, DueDate, KeywordBox, Title, Description, TagBox} from './StudyCard.styles';
+import Button from '../../commons/Button';
 
 export interface StudyCardProps {
-  image?: string;
   title: string;
-  writer: string;
+  duedate: string;
   description: string;
+  keywords: string[];
 }
 
 
-const StudyCard = ({title, writer, description, image}: StudyCardProps) => {
+const StudyCard = ({title, duedate, description, keywords}: StudyCardProps) => {
   return (
     <>
       <Layout>
-        <ImageBox>
-          <Image
-            src={testimg}
-            alt="thumbnail"
-          />
-        </ImageBox>
-        <TextBox>
-          <Title>{title}</Title>
-          <Writer>{writer}</Writer>
+        <Content>
+          <Header>
+            <DueDate>
+              <Badge pattern={'DdayBadge'} theme={'light'}>{duedate}</Badge>
+              </DueDate> 
+              <Title>{title}</Title>
+          </Header>        
           <Description>{description}</Description>
-        </TextBox>
+          <KeywordBox>
+            <TagBox>
+              {keywords.map((keyword, index) => {
+                return (
+                  <Button
+                    key={index}
+                    pattern={'iconWithBackground'}
+                    background={'D9D9D9'}
+                    color={'black'}
+                  >
+                    {keyword}
+                  </Button>
+                );
+              })}
+            </TagBox>
+          </KeywordBox>
+        </Content>
       </Layout>
     </>
-
   );
 };
 
