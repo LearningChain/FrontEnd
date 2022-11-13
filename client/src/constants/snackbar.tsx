@@ -11,7 +11,7 @@ const SNACKBAR_MESSAGE = {
     SUCCESS_REPORT_COMMENT: '신고에 성공하였습니다.',
     SUCCESS_REPORT_POST: '신고에 성공하였습니다.',
     SUCCESS_LOGOUT: '로그아웃에 성공하였습니다.',
-    SUCCESS_UPDATE_NICKNAME: '닉네임이 성공적으로 수정되었습니다.',
+    SUCCESS_UPDATE_USERNAME: '이름이 성공적으로 수정되었습니다.',
     FAIL_UPLOAD_IMAGE: '이미지 업로드를 실패했습니다.',
     FAIL_LOGIN: '아이디와 비밀번호를 확인해주세요',
     FAIL_COMMENT: '댓글을 입력해주세요',
