@@ -10,7 +10,7 @@ import useSnackbar from '../../hooks/useSnackbar';
 import authFetcher from '../../apis/authFetcher';
 import { STORAGE_KEY } from '../../constants/localStorage';
 import SNACKBAR_MESSAGE from '../../constants/snackbar';
-import { parseJwt } from '../../utils/decodeJWT';
+import { parseJwt } from '../../utils/decodeJwt';
 
 export interface Member {
     username: string;

@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
 
 import { STORAGE_KEY } from '../constants/localStorage';
-import { isExpired, parseJwt } from '../utils/decodeJWT';
+import { isExpired, parseJwt } from '../utils/decodeJwt';
 
 const authFetcher = axios.create();
 authFetcher.defaults.baseURL = process.env.API_URL;
