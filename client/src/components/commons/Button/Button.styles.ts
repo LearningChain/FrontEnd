@@ -8,12 +8,15 @@ export const Layout = styled.button<ButtonProps>`
   border: none;
   margin: 0;
   padding: 0;
+  background: white;
   ${(props) =>
     props.pattern === 'filter' &&
     css`
       height: 30px;
       padding: 0px 14px 0px 14px;
-      border: ${props.bright === 'light' ? '1px solid #e7e7e7;' : 'none'};
+      border: ${props.bright === 'light'
+        ? '1px solid #e7e7e7'
+        : '1px solid #ffffff'};
       border-radius: 15px;
       background: ${props.background
         ? props.background
@@ -44,7 +47,7 @@ export const Layout = styled.button<ButtonProps>`
     ${(props) =>
     props.pattern === 'RectangleWhite' &&
     css`
-      width: 324px;
+      width: 100%;
       height: 50px;
       color: #ffffff;
       background: ${props.bright === 'light' ? '#D9D9D9' : '#616161'};
@@ -61,7 +64,7 @@ export const Layout = styled.button<ButtonProps>`
     ${(props) =>
     props.pattern === 'roundModal' &&
     css`
-      width: 115px;
+      width: 100%;
       height: 38px;
       border-radius: 73px;
       border: ${props.bright === 'light' ? '1px solid #C8C8C8' : 'none'};
@@ -117,17 +120,8 @@ export const Layout = styled.button<ButtonProps>`
      ${(props) =>
     props.pattern === 'iconAlone' &&
     css`
-      background: #ffffff;
-      width: 25px;
-      height: 25px;
-    `}
-
-     ${(props) =>
-    props.pattern === 'iconAlone' &&
-    css`
-      background: #ffffff;
-      width: 25px;
-      height: 25px;
+      border-radius: 10px;
+      background: white;
     `}
 
     ${(props) =>
@@ -147,5 +141,24 @@ export const Layout = styled.button<ButtonProps>`
       font-size: 17px;
       height: 50px;
       cursor: pointer;
+    `}
+    ${(props) =>
+    props.pattern === 'roundRectangle' &&
+    css`
+      width: 100%;
+      font-family: 'BMHANNAAir', 'Noto Sans KR';
+      background-color: ${props.bright === 'dark' ? '#232323' : '#FFFFFF'};
+      color: ${props.bright === 'dark' ? '#FFFFFF' : '#232323'};
+      border: 1px solid ${props.bright === 'dark' ? '#232323' : '#E7E7E7'};
+      border-radius: 10px;
+      font-size: 16px;
+      height: 50px;
+      cursor: pointer;
+    `}
+    ${(props) =>
+    props.pattern === 'text' &&
+    css`
+      background-color: #ffffff;
+      text-decoration: underline;
     `}
 `;

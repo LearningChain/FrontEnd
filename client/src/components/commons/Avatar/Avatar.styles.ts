@@ -3,7 +3,7 @@ import {AvatarProps} from './Avatar';
 
 export const Layout = styled.div<AvatarProps>`
   ${(props) =>
-    props.pattern === 'leftIconAvater' &&
+    props.pattern === 'rightIconAvater' &&
     css`
       width: 55px;
       height: 55px;
@@ -29,7 +29,7 @@ export const Layout = styled.div<AvatarProps>`
       }
     `}
     ${(props) =>
-    props.pattern === 'rightIconAvater' &&
+    props.pattern === 'leftIconAvater' &&
     css`
       width: 100px;
       height: 100px;
@@ -48,10 +48,10 @@ export const Layout = styled.div<AvatarProps>`
 
 export const Icon = styled.div<{pattern: string}>`
   ${(props) =>
-    props.pattern === 'leftIconAvater' &&
+    props.pattern === 'rightIconAvater' &&
     css`
       position: absolute;
-      right: 40px;
+      left: 40px;
       width: 15px;
       height: 15px;
       border-radius: 50%;
@@ -62,14 +62,11 @@ export const Icon = styled.div<{pattern: string}>`
     `}
 
   ${(props) =>
-    props.pattern === 'rightIconAvater' &&
+    props.pattern === 'rightBigIconAvater' &&
     css`
       position: absolute;
       left: 66px;
-      width: 45px;
-      height: 45px;
       border-radius: 50%;
-      background: #b1b1b1;
       display: flex;
       justify-content: center;
       align-items: center;
