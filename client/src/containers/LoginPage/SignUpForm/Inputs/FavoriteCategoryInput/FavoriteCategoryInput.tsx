@@ -12,7 +12,7 @@ import { isValidUsername } from '@/utils/regExp';
 
 import * as Styled from '../../SignUpForm.styles';
 
-interface FaviriteCategoryInputProps extends ReturnType<typeof useInput> {
+interface FavoriteCategoryInputProps extends ReturnType<typeof useInput> {
   isAnimationActive: boolean;
   setIsAnimationActive: Dispatch<SetStateAction<boolean>>;
   isSet: boolean;
@@ -28,7 +28,7 @@ const FaviriteCategoryInput = ({
   setIsAnimationActive,
   isSet,
   setIsSet,
-}: FaviriteCategoryInputProps) => {
+}: FavoriteCategoryInputProps) => {
   const { showSnackbar } = useSnackbar();
   const { refetch } = useUsernameCheck({
     storeCode: [value],

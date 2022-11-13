@@ -58,5 +58,5 @@ export interface UpdateUsernameRequest {
   nickname: string;
 }
 
-export const requestUpdateNickname = (body: UpdateUsernameRequest) =>
+export const requestUpdateUsername = (body: UpdateUsernameRequest) =>
   authFetcher.patch<null, AxiosResponse<null>, UpdateUsernameRequest>('/members/nickname', body);

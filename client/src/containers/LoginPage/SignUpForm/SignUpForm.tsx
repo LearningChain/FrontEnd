@@ -6,7 +6,7 @@ import UsernameInput from './Inputs/UsernameInput';
 import PasswordConfirmationInput from './Inputs/PasswordConfirmationInput';
 import PasswordInput from './Inputs/PasswordInput';
 import VerificationCodeInput from './Inputs/VerificationCodeInput';
-import FaviriteCategoryInput from './Inputs/FaviriteCategoryInput';
+import FavoriteCategoryInput from './Inputs/FavoriteCategoryInput';
 
 import { useInput } from '@/hooks/useInput';
 
@@ -86,7 +86,7 @@ const SignUpForm = () => {
         <PasswordInput {...form.password} />
         <PasswordConfirmationInput {...form.passwordConfirmation} password={form.password.value} />
         <UsernameInput {...form.username} isSet={isUsernameSet} setIsSet={setIsUsernameSet} />
-        <FaviriteCategoryInput {...form.favoriteCategory} isSet={isFavoriteCategorySet} setIsSet={setIsFavoriteCategorySet}></FaviriteCategoryInput>
+        <FavoriteCategoryInput {...form.favoriteCategory} isSet={isFavoriteCategorySet} setIsSet={setIsFavoriteCategorySet}></FavoriteCategoryInput>
         <SubmitButton
           onClick={handleSubmitButton}
           disabled={!isEmailSet || !isUsernameSet}
