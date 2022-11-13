@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 
 import { STORAGE_KEY } from '../constants/localStorage';
-import { parseJwt } from '../utils/decodeJWT';
+import { parseJwt } from '../utils/decodeJwt';
 
 interface AuthContextValue {
   isLogin: boolean;

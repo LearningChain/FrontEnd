@@ -6,7 +6,7 @@ const SNACKBAR_MESSAGE = {
     SUCCESS_LOGIN: '로그인에 성공하였습니다.',
     SUCCESS_SIGN_UP: '회원가입에 성공하였습니다.',
     SUCCESS_ID_CHECK: '사용할 수 있는 아이디입니다.',
-    SUCCESS_NICKNAME_CHECK: '사용할 수 있는 닉네임입니다.',
+    SUCCESS_USERNAME_CHECK: '사용할 수 있는 닉네임입니다.',
     SUCCESS_DELETE_COMMENT: '성공적으로 댓글이 삭제되었습니다.',
     SUCCESS_REPORT_COMMENT: '신고에 성공하였습니다.',
     SUCCESS_REPORT_POST: '신고에 성공하였습니다.',
