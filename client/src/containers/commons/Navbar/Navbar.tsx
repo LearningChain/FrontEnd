@@ -15,7 +15,7 @@ const Navbar = () => {
             const color =
               location.pathname === navObj.to ? '#232323' : '#AFAFAF';
             return (
-              <Link to={'/mais'} key={navObj.icon}>
+              <Link to={navObj.to} key={navObj.icon}>
                 <IconBlock>
                   <Icon icon={navObj.icon} aria-hidden stroke={color} />
                   <Name color={color}>{navObj.name}</Name>

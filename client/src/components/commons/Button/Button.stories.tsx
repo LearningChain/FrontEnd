@@ -1,5 +1,6 @@
 import Button from './Button';
 import React from 'react';
+import Icon from '../../../components/foundations/Icon/Icon';
 export default {
   title: 'Commons/Button',
   component: Button,
@@ -106,50 +107,27 @@ export const all = () => (
     <br />
     <div>iconWithBackground</div>
     <br />
-    <Button pattern={'iconWithBackground'}>
+    <Button pattern={'iconWithBackground'} background={'#ACED22'}>
       <div>더보기</div>
-      <svg
-        width="21"
-        height="21"
-        viewBox="0 0 21 21"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8.59082 5.72754L13.3635 10.5003L8.59082 15.273"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <Icon
+        icon="deleteX"
+        width="12"
+        height="12"
+        viewBox="0 0 12 12"
+        stroke=""
+      />
     </Button>
     <br />
     <div>iconAlone</div>
     <br />
-    <Button pattern={'iconAlone'}>
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-          stroke="#2F363D"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M20.9999 21.0004L16.6499 16.6504"
-          stroke="#2F363D"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+    <Button pattern={'iconAlone'} background={'#ACED22'}>
+      <Icon
+        icon="deleteX"
+        width="12"
+        height="12"
+        viewBox="0 0 12 12"
+        stroke=""
+      />
     </Button>
     <br />
     <div>textAlone</div>

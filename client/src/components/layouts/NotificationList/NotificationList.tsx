@@ -13,7 +13,7 @@ const NotificationList = ({...props}: BadgeProps) => {
       {props.itemList.map((itemObj, index) => {
         return (
           <NotificationItem
-            title={itemObj.title}
+            user={itemObj.user}
             paragraph={itemObj.paragraph}
             active={itemObj.active}
             date={itemObj.date}
