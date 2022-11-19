@@ -20,5 +20,8 @@ export const all = () => (
       디자인
     </Badge>
     <br />
+    <Badge pattern={'DdayBadge'} theme={'light'}>
+      디자인
+    </Badge>
   </>
 );

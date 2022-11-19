@@ -39,6 +39,12 @@ export const Layout = styled.li<BadgeProps>`
       height: 15px;
       border-radius: 5px;
     `}
+  ${(props) => 
+    props.pattern === 'DdayBadge' &&
+    css`
+      height: 30px;
+      border-radius: 5px;
+    `}
 `;
 
 export const Text = styled.span<BadgeProps>`
